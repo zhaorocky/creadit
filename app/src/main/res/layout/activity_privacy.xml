@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        tools:context=".ui.PrivacyActivity">
+
+
+        <LinearLayout
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp"
+            android:layout_marginTop="32dp"
+            android:layout_marginBottom="32dp"
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:layout_weight="1"
+                android:background="@drawable/shape_white_radios16"
+                android:layout_width="match_parent"
+                android:gravity="center_horizontal"
+                android:paddingLeft="16dp"
+                android:paddingRight="16dp"
+                android:paddingTop="20dp"
+                android:orientation="vertical"
+                android:paddingBottom="20dp"
+                android:layout_height="0dp">
+
+                <TextView
+                    android:text="@string/title_privacy"
+                    android:textColor="@color/black"
+                    android:textStyle="bold"
+                    android:textSize="20sp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+                </TextView>
+
+                <ScrollView
+                    android:layout_weight="1"
+                    android:paddingTop="12dp"
+                    android:paddingBottom="16dp"
+                    android:scrollbars="vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp">
+                    <TextView
+                        android:text="@string/content_privacy"
+                        android:textColor="@color/text_666"
+                        android:textStyle="bold"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+                    </TextView>
+                </ScrollView>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="2dp"
+                    android:background="@drawable/shape_line_dott"/>
+                <LinearLayout
+                    android:layout_marginTop="16dp"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <ImageView
+                        android:src="@drawable/bg_warning"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+
+                    </ImageView>
+                     <TextView
+                         android:id="@+id/tv_privacy_privacy"
+                        android:textSize="12sp"
+                        android:layout_marginLeft="4dp"
+                        android:textColor="@color/text_999"
+                        android:layout_weight="1"
+                        android:text="@string/toast_privacy"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"/>
+                </LinearLayout>
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_marginTop="20dp"
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/tv_cancel_privacyActivity"
+                    android:background="@drawable/bt_white_click"
+                    android:textSize="18sp"
+                    android:gravity="center"
+                    android:paddingLeft="24dp"
+                    android:paddingRight="24dp"
+                    android:textColor="@color/purple_200"
+                    android:text="@string/cancel_privacy"
+                    android:layout_width="wrap_content"
+                    android:layout_height="48dp"/>
+
+                <TextView
+                    android:id="@+id/tv_accept_privacyActivity"
+                    android:layout_marginLeft="16dp"
+                    android:background="@drawable/bt_orange_click"
+                    android:textSize="18sp"
+                    android:textColor="@color/white"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:text="@string/accept_privacy"
+                    android:layout_width="0dp"
+                    android:layout_height="48dp"/>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</layout>

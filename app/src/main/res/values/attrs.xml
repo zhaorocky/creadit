@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="viewTitle">
+        <attr name="left_title_image" format="reference" />
+        <attr name="right_title_image" format="reference" />
+        <attr name="text_title_view" format="string" />
+        <attr name="showRight" format="boolean" />
+        <attr name="showLeft" format="boolean" />
+    </declare-styleable>
+
+    <declare-styleable name="underLine">
+
+        <attr name="text_underLine" format="string" />
+        <attr name="underLine_color" format="color" />
+    </declare-styleable>
+    <declare-styleable name="privacy_text">
+        <attr name="text_privacy1" format="string" />
+        <attr name="text_privacy2" format="string" />
+        <attr name="show_image" format="boolean" />
+    </declare-styleable>
+
+    <declare-styleable name="FullscreenAttrs">
+        <attr name="fullscreenBackgroundColor" format="color" />
+        <attr name="fullscreenTextColor" format="color" />
+    </declare-styleable>
+
+    <declare-styleable name="view_upload">
+        <attr name="text_title" format="string" />
+        <attr name="image_center" format="reference" />
+    </declare-styleable>
+</resources>

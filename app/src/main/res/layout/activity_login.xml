@@ -1,0 +1,199 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/bg_activity"
+        tools:context=".ui.LoginActivity">
+
+        <ImageView
+            app:layout_constraintTop_toTopOf="parent"
+            android:src="@drawable/welcome"
+            android:scaleType="centerCrop"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+        </ImageView>
+        <com.like.upper.pleasure.view.ViewTitle
+            android:id="@+id/view_login_header"
+            app:layout_constraintTop_toTopOf="parent"
+            app:text_title_view="@string/login_title_text"
+            app:left_title_image="@drawable/ic_back"
+            app:right_title_image="@drawable/kefufill"
+            android:layout_width="match_parent"
+            android:layout_height="56dp">
+        </com.like.upper.pleasure.view.ViewTitle>
+
+
+
+        <LinearLayout
+            app:layout_constraintTop_toBottomOf="@+id/view_login_header"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingTop="12dp"
+                android:paddingBottom="12dp"
+                android:layout_marginTop="12dp"
+                android:layout_marginBottom="12dp"
+                android:gravity="center"
+                android:text="@string/login_text_head"
+                android:textColor="@color/white"
+                android:textSize="12sp"
+                />
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="16dp"
+                android:paddingBottom="8dp"
+                android:paddingTop="12dp"
+                android:background="@drawable/shape_white_radios8"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginRight="16dp"
+                    android:layout_width="34dp"
+                    android:layout_height="20dp"
+                    android:text="+593"
+                    android:textColor="#ff0e85ff"
+                    android:textSize="14sp"
+                    />
+
+                <EditText
+                    android:id="@+id/et_login_phone"
+                    android:background="@color/white"
+                    android:paddingLeft="16dp"
+                    android:paddingRight="16dp"
+                    android:paddingTop="12dp"
+                    android:paddingBottom="8dp"
+                    android:textSize="12sp"
+                    android:maxLength="9"
+                    android:inputType="number"
+                    android:textColorHint="@color/text_999"
+                    android:hint="@string/login_et_hint_username"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                </EditText>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_marginTop="12dp"
+                android:orientation="vertical"
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="16dp"
+                android:paddingBottom="8dp"
+                android:paddingTop="12dp"
+                android:background="@drawable/shape_white_radios8"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginRight="16dp"
+                    android:layout_width="34dp"
+                    android:layout_height="20dp"
+                    android:text="OPT"
+                    android:textColor="#ff0e85ff"
+                    android:textSize="14sp"
+                    />
+
+                <EditText
+                    android:id="@+id/et_login_code"
+                    android:background="@color/white"
+                    android:paddingLeft="16dp"
+                    android:paddingRight="16dp"
+                    android:paddingTop="12dp"
+                    android:paddingBottom="8dp"
+                    android:textSize="12sp"
+                    android:maxLength="4"
+                    android:inputType="number"
+                    android:textColorHint="@color/text_999"
+                    android:hint="@string/login_et_hint_password"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                </EditText>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/ly_login_send"
+                android:layout_margin="8dp"
+                android:padding="12dp"
+                android:enabled="false"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+                <com.like.upper.pleasure.view.UnderLineText
+                    android:id="@+id/tv_login_send"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:text_underLine="@string/login_send1"
+                    app:underLine_color="@color/text_999"
+                    android:enabled="false"
+                    android:textSize="14sp"
+                    />
+                <com.like.upper.pleasure.view.UnderLineText
+                    android:id="@+id/tv_login_send2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:underLine_color="@color/accept"
+                    android:enabled="false"
+                    android:textSize="14sp"
+                    />
+            </LinearLayout>
+
+
+            <TextView
+                android:id="@+id/tv_login_register"
+                android:layout_marginLeft="64dp"
+                android:layout_marginRight="64dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingTop="12dp"
+                android:paddingBottom="12dp"
+                android:gravity="center"
+                android:textSize="18sp"
+                android:clickable="false"
+                android:text="@string/login_register"
+                android:background="@drawable/bt_register"
+                android:textColor="@color/white"
+                />
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:padding="20dp"
+            android:gravity="center"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <include layout="@layout/privacy_text" />
+        </LinearLayout>
+
+
+
+
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

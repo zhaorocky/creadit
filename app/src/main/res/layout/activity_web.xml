@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/bg_activity"
+        tools:context=".ui.WebActivity">
+        <com.like.upper.pleasure.view.ViewTitle
+            android:id="@+id/view_webAct_header"
+            android:background="@color/purple_200"
+            app:layout_constraintTop_toTopOf="parent"
+            app:left_title_image="@drawable/ic_back"
+            app:right_title_image="@drawable/kefufill"
+            android:layout_width="match_parent"
+            android:layout_height="56dp">
+        </com.like.upper.pleasure.view.ViewTitle>
+
+        <WebView
+            android:id="@+id/web"
+            app:layout_constraintTop_toBottomOf="@+id/view_webAct_header"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:layout_width="0dp"
+            android:layout_height="0dp">
+        </WebView>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

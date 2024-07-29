@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/bg_activity"
+        tools:context=".ui.LoginActivity">
+
+        <com.like.upper.pleasure.view.ViewTitle
+            android:id="@+id/view_language_header"
+            app:layout_constraintTop_toTopOf="parent"
+            app:text_title_view="@string/set_luange"
+            android:background="@color/purple_200"
+            app:left_title_image="@drawable/ic_back"
+            app:right_title_image="@drawable/kefufill"
+            android:layout_width="match_parent"
+            android:layout_height="56dp">
+        </com.like.upper.pleasure.view.ViewTitle>
+
+
+        <LinearLayout
+            android:id="@+id/ly_english"
+            app:layout_constraintTop_toBottomOf="@+id/view_language_header"
+            android:orientation="horizontal"
+            android:layout_marginTop="20dp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp"
+            android:gravity="center_vertical"
+            android:background="@drawable/shape_white_radios8"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:text="English"
+                android:textSize="20sp"
+                android:padding="16dp"
+                android:layout_weight="1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+            </TextView>
+            <ImageView
+                android:id="@+id/iv_en_switch"
+                android:src="@drawable/switch_on"
+                android:layout_width="56dp"
+                android:layout_height="28dp">
+            </ImageView>
+
+
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/ly_spanish"
+            app:layout_constraintTop_toBottomOf="@+id/ly_english"
+            android:orientation="horizontal"
+            android:layout_marginTop="20dp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp"
+            android:gravity="center"
+            android:background="@drawable/shape_white_radios8"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:text="Español"
+                android:textSize="20sp"
+                android:padding="16dp"
+                android:layout_weight="1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+            </TextView>
+            <ImageView
+                android:id="@+id/iv_es_switch"
+                android:src="@drawable/switch_off"
+                android:layout_width="56dp"
+                android:layout_height="28dp">
+            </ImageView>
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/tv_setLanguage_out"
+            android:layout_marginLeft="64dp"
+            android:layout_marginRight="64dp"
+            android:layout_marginBottom="48dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingTop="12dp"
+            android:paddingBottom="12dp"
+            android:gravity="center"
+            android:textSize="18sp"
+            android:clickable="false"
+            android:text="@string/go_out"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:background="@drawable/bt_register"
+            android:textColor="@color/white"
+            />
+
+
+
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

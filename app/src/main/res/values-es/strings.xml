@@ -1,0 +1,117 @@
+<resources>
+    <string name="app_name">Crédito Verde</string>
+
+    <string name="title_activity_privacy">PrivacyActivity</string>
+    <!-- Strings used for fragments for navigation -->
+    <string name="first_fragment_label">First Fragment</string>
+    <string name="second_fragment_label">Second Fragment</string>
+    <string name="next">Next</string>
+    <string name="title">título</string>
+    <string name="previous">Previous</string>
+    <string name="title_privacy">Declaración de divul</string>
+    <string name="content_privacy">Hi.there To access your eligibility and facilitate faster disbursal of your loan, we need these permissions
+
+\n\nSMS\n\n
+
+Collect and monitor only financial transaction Introducir texto messages including the name of the transaction party. The purpose is to conduct a credit risk assessment of the transaction and the description of the transaction amount. This credit risk assessment speeds up loan disbursement without any Perfil Introducir texto messages being deleted, read or collected
+
+\n\nContacts\n\n
+
+The NBFC loan process and guidelines mandates us to verify references. This feature enables us to do that &amp; Why type in contact number when you can just choose from your contact book.</string>
+    <string name="sms">SMS</string>
+    <string name="toast_privacy"> Hacer clic en "Aceptar y continuar" significa que usted ha revisado,leído y aceptado nuestro</string>
+    <string name="toast_chose_amount"> He revisado atentamente el &lt;Contrato del préstamo&gt; y &lt;Aviso de privacidad&gt;.</string>
+    <string name="toast_privacy_red">"Aviso de privacidad"</string>
+    <string name="cancel_privacy">"Rechazar"</string>
+    <string name="accept_privacy">"Aceptar y continuar"</string>
+    <string name="accept_cnacle">Cerrar</string>
+    <string name="accept_confirm">Confirmar</string>
+    <string name="title_activity_fullscreen">FullscreenActivity</string>
+
+    <string name="login_title_text">Crédito Verde</string>
+    <string name="login_text_head">Inicie sesión ahora para solicitar su préstamo</string>
+    <string name="login_et_hint_username">Por favor, introduzca su número de teléfono móvil</string>
+    <string name="login_et_hint_password">Por favor ingrese el código de verificación</string>
+    <string name="login_send1">Obtener el código</string>
+    <string name="login_send2">Obtener el OTP </string>
+    <string name="login_send3">Código de reserva en</string>
+    <string name="login_register">Registrarse</string>
+    <string name="login_privacy1">Por favor revisa el </string>
+    <string name="login_privacy2">&lt;Aviso de privacidad&gt;</string>
+    <string name="login_message_clicksss">Marca revisado</string>
+
+    <string name="info1_title">Información Perfil</string>
+    <string name="info1_last_name">Apellido</string>
+    <string name="info1_input_hint">Introducir texto</string>
+    <string name="info1_names">Nombres</string>
+    <string name="info1_birthday">Introducir texto</string>
+    <string name="info1_chose_hint">Por favor elige</string>
+    <string name="info1_sex">Sexo</string>
+    <string name="info1_Email">Correo</string>
+    <string name="info1_submit">Siguiente</string>
+
+    <string name="info1_image_title">Información de identidad</string>
+    <string name="info1_image_title1">Identificación</string>
+    <string name="info1_image_text1">Frontal</string>
+    <string name="info1_image_content1">Número de documento de identidad</string>
+    <string name="info1_image_content2">Por favor introduce</string>
+    <string name="info1_image_title2">Reconocimiento facial</string>
+    <string name="info1_image_text2">Haga clic en</string>
+
+    <string name="info2_title">Contacto de emergencia</string>
+    <string name="info2_contact1">Primera referencia Perfil</string>
+    <string name="info2_contact2">Segunda referencia Perfil</string>
+    <string name="info2_relationship">Relación</string>
+    <string name="info2_telephone">Teléfono</string>
+    <string name="info2_Number">Nombre</string>
+
+    <string name="info_loan1_loan_title">Información de recibir el préstamo</string>
+    <string name="info_loan1_loan">Método de recibir el préstamo</string>
+    <string name="info_loan1_accout">Tipo de cuenta</string>
+    <string name="info_loan1_bank_name">Nombre del banco</string>
+    <string name="info_loan1_bank_acoount">Cuenta bancaria</string>
+    <string name="info_loan1_confirm_account">Confirmar Cuenta bancaria</string>
+
+    <string name="info_loan2_loan_title">Información de recibir el préstamo</string>
+    <string name="info_loan2_1">Método de recibir el préstamo</string>
+    <string name="info_loan2_2">Cuenta de Billetera electrónica</string>
+    <string name="info_loan2_3">Confirmar Cuenta de Billetera electrónica</string>
+
+    <string name="home_title">Crédito Verde</string>
+    <string name="home_max">Cantidad máxima($)</string>
+    <string name="home_days">días</string>
+    <string name="home_cuotas">cuotas</string>
+    <string name="home_times">Plazo máximo de préstamo</string>
+    <string name="home_text">Se admite pagar en </string>
+    <string name="home_text2">3-6 cuotas</string>
+    <string name="home_text3">El plazo será más largo y flexible</string>
+    <string name="home_apply">Aplica ya</string>
+    <string name="home_pru1">Hacer clic para solicitar</string>
+    <string name="home_pru2">Entregar la solicitud</string>
+    <string name="home_pru3">Obtener el préstamo</string>
+
+    <string name="home_review">Bajo Revisión</string>
+    <string name="home_review_text">Estamos estimando su préstamo, Presta atención a los resultados de la revisión en la aplicación.</string>
+    <string name="home_loans_bt">Están depositando</string>
+    <string name="home_loans_amount">Monto del préstamo($)</string>
+    <string name="home_loans_days">Monto del préstamo($)</string>
+    <string name="home_loans">Su solicitud ha sido aprobada.Se está depositando su préstamo.</string>
+
+    <string name="chose_aomoutn_bottom_text">Tasa de aprobación 99% si da clic para solicitar dentro de</string>
+
+    <string name="my_adjustment">Ajuste</string>
+    <string name="my_customer_service">Servicio al Cliente</string>
+    <string name="my_privacy_notices">Avisos de Privacidad</string>
+    <string name="my_online_customer_service">Servicio al cliente en línea</string>
+
+    <string name="go_out">Salir</string>
+    <string name="set_luange">Cambiar idioma</string>
+
+    <string name="home_menu1">Inicio</string>
+    <string name="home_menu2">Orden</string>
+    <string name="home_menu3">Perfil</string>
+
+
+
+
+</resources>

@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content">
+
+
+
+
+    <com.like.upper.pleasure.view.UnderLineText
+        android:layout_marginLeft="8dp"
+        android:id="@+id/tv_privacy1"
+        app:layout_constraintLeft_toRightOf="@+id/iv_privacy"
+        app:layout_constraintTop_toTopOf="parent"
+        app:text_underLine="@string/login_privacy1"
+        app:underLine_color="@color/black"
+        android:textColor="@color/black"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+    </com.like.upper.pleasure.view.UnderLineText>
+
+
+    <com.like.upper.pleasure.view.UnderLineText
+        android:id="@+id/tv_privacy2"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintLeft_toRightOf="@+id/tv_privacy1"
+        app:text_underLine="@string/login_privacy2"
+        app:underLine_color="@color/purple_200"
+        android:textColor="@color/purple_200"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        >
+    </com.like.upper.pleasure.view.UnderLineText>
+    <ImageView
+        app:layout_constraintTop_toTopOf="@id/tv_privacy1"
+       android:layout_marginRight="8dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:id="@+id/iv_privacy"
+        android:src="@drawable/bg_warning"
+        android:layout_width="14dp"
+        android:layout_height="14dp"
+        >
+    </ImageView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

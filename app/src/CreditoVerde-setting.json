@@ -1,0 +1,227 @@
+{
+  "neatPleasedCompositionViolentFog": {
+    "title": "提额banner",
+    "value": "http://www.baidu.com",
+    "desc": "金额选择页（点击锁定金额日期弹出）、审核中、还款中、逾期中、还款成功弹窗用到"
+  },
+  "rapidFibreSouthernRainbowEgypt": {
+    "title": "订单页-banner",
+    "value": "http://www.baidu.com",
+    "desc": "贷款首页、订单详情页banner图"
+  },
+  "marriedMedicalGreedyDot": {
+    "title": "订单页-推荐产品banner",
+    "value": "http://www.baidu.com",
+    "desc": "首贷拒绝、复贷展示"
+  },
+  "spokenExperimentBraveKeeper": {
+    "title": "首页-提额券金额",
+    "value": "10001",
+    "desc": "例如1000，纯数字不超过8位"
+  },
+  "deliciousHardFollowingSofa": {
+    "title": "首页-最大金额",
+    "value": "10000",
+    "desc": "例如1000，纯数字不超过8位"
+  },
+  "strangeEarthquakeCordlessAlarmRag": {
+    "title": "首页-最大金额-测试",
+    "value": "20000",
+    "desc": "用于测试账号，首页的最大金额"
+  },
+  "africanTelegramComfortableCoachPrettyGlass": {
+    "title": "首页-天数",
+    "value": "91",
+    "desc": "例如91day，首页的天数,字符串"
+  },
+  "secondVocabulary": {
+    "title": "首页-天数-测试",
+    "value": "91",
+    "desc": "例如91day,用于测试账号，首页的天数,字符串"
+  },
+  "deadBuddhismLameAffairSeniorLuggage": {
+    "title": "首页-最小金额",
+    "value": "10000",
+    "desc": "例如1000，纯数字不超过8位"
+  },
+  "spiritualYouHumorousSafeTheatre": {
+    "title": "拒绝页-推荐banner",
+    "value": "banner",
+    "desc": ""
+  },
+  "expensivePlaneSkin": {
+    "title": "拒绝页-下次贷款天数",
+    "value": "14",
+    "desc": "数字，不超过3位"
+  },
+  "suchLamePalaceLuckyHeadmistress": {
+    "title": "还款成功页-下一次提额券金额",
+    "value": "1000",
+    "desc": "纯数字不超过8位"
+  },
+  "electricPositionBus": {
+    "title": "进件页-引导金额",
+    "value": "1000,2000,3000,4000,5000",
+    "desc": "例如1000，纯数字不超过8位，可配置多个（最多五个），逗号隔开"
+  },
+  "technicalChanceYoungActivityMinibusBoot": {
+    "title": "金额选择页-下一次提额券金额",
+    "value": "10001",
+    "desc": "例如1000，纯数字不超过8位"
+  },
+  "gayAwardSpoonful": {
+    "title": "金额选择页-底部轮播文案",
+    "value": "xxx刚刚贷款10000000000元，xxx刚刚贷款10000000000元",
+    "desc": "不超过500字符"
+  },
+  "smokeHungerExtraordinaryAuthor": {
+    "title": "金额选择页-锁定期限",
+    "value": "+7,+7,*2",
+    "desc": "日-月-年，配步长 ，乘法，可配置多个（最多配3个），逗号隔开"
+  },
+  "hungryBusinessEditionClearDivision": {
+    "title": "金额选择页-锁定金额",
+    "value": "+1000,+1000,*2",
+    "desc": "纯数字不超过8位，配步长 ，加法。可配置多个（最多配3个），逗号隔开"
+  },
+  "silentFearHelpfulTortoise": {
+    "title": "金额选择页-复贷营销金额（同首页提额券）",
+    "value": "1000",
+    "desc": "纯数字不超过8位"
+  },
+  "beautifulBrownDiscriminationHealthyCinema": {
+    "title": "客服页-email",
+    "value": "312321321@111.com,111@qq.com",
+    "desc": "xxx@xxx.com，不超过20字符，可配置多个，逗号隔开"
+  },
+  "folkCrowdedTroublesomeStamp": {
+    "title": "客服页-phone",
+    "value": "12321321,13131231,123211",
+    "desc": "纯数字，不超过15字符，可配置多个，逗号隔开"
+  },
+  "maleMessyMainlandForehead": {
+    "title": "客服页-whatsApp",
+    "value": "12321321,13131231,123211",
+    "desc": "纯数字，不超过15字符，可配置多个，逗号隔开"
+  },
+  "lovelyRegularSoccerIndependentHarbour": {
+    "title": "客服页-文案",
+    "value": "* Nos pondremos en contacto con usted dentro de las 24 horas.",
+    "desc": "不超过50字符"
+  },
+  "conceitedMailboxMoralFerry": {
+    "title": "好评弹窗-开关",
+    "value": "0,0,0,0,0,0",
+    "desc": "0是关闭，1是开启\n设此弹窗弹出开关（首贷申请完成后,放款成功后,还款成功后\n复贷申请完成后,放款成功后,还款成功后）\n可控制这些页面是否展示"
+  },
+  "readyScholarPacificCourtyardMagicChain": {
+    "title": "好评弹窗-弹出次数",
+    "value": "1",
+    "desc": "1，2，3，单个纯数字不超过10次"
+  },
+  "folkLadyEar": {
+    "title": "展期确认弹窗-开关",
+    "value": "0",
+    "desc": "0是关，1是开\n设置此弹窗开关"
+  },
+  "strictPrideShabbyModernNeedle": {
+    "title": "展期确认弹窗-标题（可配2标题）",
+    "value": "标题,标题",
+    "desc": "不超过20字符，可配置2个，逗号隔开"
+  },
+  "neatBreakCrossPlate": {
+    "title": "展期确认弹窗-内容（可配2内容）",
+    "value": "内容，内容",
+    "desc": "不超过500字符，可配置2个，逗号隔开"
+  },
+  "surroundingGrillBasinVegetable": {
+    "title": "谷歌评论-开关",
+    "value": "1",
+    "desc": "0是关，1是开\n可通过状态设置是否启用谷歌评论"
+  },
+  "facialBiologyDepartureNephew": {
+    "title": "消息弹窗-开关",
+    "value": "1",
+    "desc": "0是关，1是开\n可通过状态设置是否启用弹窗"
+  },
+  "manDrumCottonBentSound": {
+    "title": "消息弹窗-标题",
+    "value": "标题标题标题",
+    "desc": "不超过20字符"
+  },
+   "publicPrayerSpaghetti": {
+    "title": "打开投诉书模式",
+    "value": "1",
+    "desc": "0自带WebView打开,1是系统浏览器打开"
+  },
+  "facialSteepAutumn": {
+    "title": "消息弹窗-内容",
+    "value": "内容内容内容",
+    "desc": "不超过500字符"
+  },
+  "deafQuiltNormalGuidance": {
+    "title": "还款提示弹窗-开关",
+    "value": "1",
+    "desc": "0是关，1是开\n可通过状态设置是否启用弹窗"
+  },
+  "scottishCruelCoolPast": {
+    "title": "还款提示弹窗-标题",
+    "value": "内容内容内容",
+    "desc": "不超过500字符"
+  },
+  "valuableBreathDollar": {
+    "title": "还款提示弹窗-内容",
+    "value": "内容内容内容",
+    "desc": "不超过500字符"
+  },
+  "lowSuitableBakeryTheseMile": {
+    "title": "还款提示弹窗-按钮",
+    "value": "内容内容内容",
+    "desc": "不超过500字符"
+  },
+  "youngUncleUnfairToughHeroine": {
+    "title": "提前还款弹框开关",
+    "value": "1",
+    "desc": "提前还款弹框开关"
+  },
+  "mobileAdviceMistakenMaterialMoment": {
+    "title": "提前还款弹框间隔时间",
+    "value": "1",
+    "desc": "1单位是小时"
+  },
+    "tiresomeTowelCarelessDisadvantage": {
+    "title": "借款合同",
+    "value": "借款合同url",
+    "desc": "借款合同"
+  },
+    "coolBaggageCoral": {
+    "title": "还款投诉入口展示标识",
+    "value": "1",
+    "desc": "1展示，0不展示"
+  },
+    "shyThirstLiteraryHistoryDangerousBeehive": {
+    "title": "还款投诉入口自动展示标识",
+    "value": "1",
+    "desc": "1展示，0不展示"
+  },
+  "extraordinaryRoofCertificateTastelessTurning": {
+    "title": "普通和推荐banner总开关",
+    "value": "1",
+    "desc": "1展示，0不展示"
+  },
+   "stupidPairNovelistBlackSleeve": {
+    "title": "进件页描述文案",
+    "value": "Please fill in your real information, which will help you pass the credit check more quickly. We have the most professional way to protect your information security!",
+    "desc": "不超过500字符"
+  },
+   "juniorHappyItalianClothes": {
+    "title": "进件页描述文案-中文",
+    "value": "请填写您的真实信息，这将可以帮助您更快速的通过信用审核，我们拥有最专业的方式保护您的信息安全",
+    "desc": "不超过500字符"
+  },
+  "juniorFactoryBrightJournalistFarCourtyard": {
+    "title": "进件页描述文案-马来语",
+    "value": "Sila isi maklumat sebenar anda, yang akan membantu anda lulus semakan kredit dengan lebih cepat. Kami mempunyai cara paling profesional untuk melindungi keselamatan maklumat anda!",
+    "desc": "不超过500字符"
+  }
+}

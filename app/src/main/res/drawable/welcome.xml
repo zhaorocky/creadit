@@ -1,0 +1,59 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:aapt="http://schemas.android.com/aapt"
+    android:width="375dp"
+    android:height="249dp"
+    android:viewportWidth="375"
+    android:viewportHeight="249">
+  <path
+      android:pathData="M0,0h375v249h-375z"
+      android:strokeWidth="1"
+      android:fillColor="#0E85FF"
+      android:fillType="evenOdd"
+      android:strokeColor="#00000000"/>
+  <group>
+    <clip-path
+        android:pathData="M0,0h375v249h-375z"/>
+    <path
+        android:pathData="M187,-15m-225,0a225,225 0,1 1,450 0a225,225 0,1 1,-450 0"
+        android:strokeAlpha="0.19882348"
+        android:strokeWidth="1"
+        android:fillType="evenOdd"
+        android:strokeColor="#00000000"
+        android:fillAlpha="0.19882348">
+      <aapt:attr name="android:fillColor">
+        <gradient 
+            android:startX="187"
+            android:startY="-43.08"
+            android:endX="187"
+            android:endY="198.2"
+            android:type="linear">
+          <item android:offset="0" android:color="#00FFFFFF"/>
+          <item android:offset="1" android:color="#FFFFFFFF"/>
+        </gradient>
+      </aapt:attr>
+    </path>
+  </group>
+  <group>
+    <clip-path
+        android:pathData="M0,0h375v249h-375z"/>
+    <path
+        android:pathData="M187,327m-225,0a225,225 0,1 1,450 0a225,225 0,1 1,-450 0"
+        android:strokeAlpha="0.38313803"
+        android:strokeWidth="1"
+        android:fillType="evenOdd"
+        android:strokeColor="#00000000"
+        android:fillAlpha="0.38313803">
+      <aapt:attr name="android:fillColor">
+        <gradient 
+            android:startX="187"
+            android:startY="69.99"
+            android:endX="187"
+            android:endY="282.5"
+            android:type="linear">
+          <item android:offset="0" android:color="#00FFFFFF"/>
+          <item android:offset="1" android:color="#FFFFFFFF"/>
+        </gradient>
+      </aapt:attr>
+    </path>
+  </group>
+</vector>

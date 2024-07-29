@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:startDestination="@id/infoBaseINfo"
+    android:id="@+id/nav_verify">
+
+    <fragment
+        android:id="@+id/infoBaseINfo"
+        android:name="com.like.upper.pleasure.fm.InfoActivity"
+        >
+        <action
+            android:id="@+id/to_infoBase"
+            app:destination="@+id/infoContract"
+            />
+    </fragment>
+
+    <fragment
+        android:id="@+id/infoContract"
+        android:name="com.like.upper.pleasure.fm.InfoContactActivity"
+        >
+        <action
+            android:id="@+id/to_infoImg"
+            app:destination="@+id/infoImage"
+            />
+        <action
+            android:id="@+id/to_infoBaseBack"
+            app:destination="@+id/infoBaseINfo"
+            />
+    </fragment>
+
+
+    <fragment
+        android:id="@+id/infoImage"
+        android:name="com.like.upper.pleasure.fm.InfoImageActivity"
+        >
+        <action
+            android:id="@+id/to_infoBank"
+            app:destination="@+id/infoBank"
+            />
+        <action
+            android:id="@+id/to_infoContractBack"
+            app:destination="@+id/infoContract"
+            />
+    </fragment>
+
+    <fragment
+        android:id="@+id/infoBank"
+        android:name="com.like.upper.pleasure.fm.InfoLoan1Activity"
+        >
+        <action
+            android:id="@+id/to_infoImageBack"
+            app:destination="@+id/infoImage"
+            />
+    </fragment>
+
+
+</navigation>

@@ -1,0 +1,111 @@
+<resources>
+    <string name="app_name">Crédito Verde</string>
+
+    <string name="title_activity_privacy">PrivacyActivity</string>
+    <!-- Strings used for fragments for navigation -->
+    <string name="first_fragment_label">First Fragment</string>
+    <string name="second_fragment_label">Second Fragment</string>
+    <string name="next">Next</string>
+    <string name="title">title</string>
+    <string name="previous">Previous</string>
+    <string name="title_privacy">Declaración de divul</string>
+    <string name="content_privacy">Hi.there To access your eligibility and facilitate faster disbursal of your loan, we need these permissions
+
+\n\nSMS\n\n
+
+Collect and monitor only financial transaction Introducir texto messages including the name of the transaction party. The purpose is to conduct a credit risk assessment of the transaction and the description of the transaction amount. This credit risk assessment speeds up loan disbursement without any Perfil Introducir texto messages being deleted, read or collected
+
+\n\nContacts\n\n
+
+The NBFC loan process and guidelines mandates us to verify references. This feature enables us to do that &amp; Why type in contact number when you can just choose from your contact book.</string>
+    <string name="sms">SMS</string>
+    <string name="toast_privacy"> Clicking "Accept and continue" means that you have reviewed, read and accepted our</string>
+    <string name="toast_chose_amount"> I have carefully reviewed the &lt;Loan Agreement&gt; and &lt;Privacy Notice&gt;.</string>
+    <string name="toast_privacy_red">"Notice of Privacy"</string>
+    <string name="cancel_privacy">"Decline"</string>
+    <string name="accept_privacy">"Accept and continue"</string>
+    <string name="accept_cnacle">Cancel</string>
+    <string name="accept_confirm">Confirm</string>
+    <string name="title_activity_fullscreen">FullscreenActivity</string>
+
+    <string name="login_title_text">Green Credit</string>
+    <string name="login_text_head">Login now to apply for your loan</string>
+    <string name="login_et_hint_username">Please enter your mobile phone number</string>
+    <string name="login_et_hint_password">Please enter the verification code</string>
+    <string name="login_send1">Get the code</string>
+    <string name="login_send2">Get the OTP </string>
+    <string name="login_send3">Reservation code in</string>
+    <string name="login_register">SignIn</string>
+    <string name="login_privacy1">Please check the </string>
+    <string name="login_privacy2">&lt;Notice of Privacy&gt;</string>
+    <string name="login_message_clicksss">Revised brand</string>
+
+    <string name="info1_title">Profile Information</string>
+    <string name="info1_last_name">Last name</string>
+    <string name="info1_input_hint">Enter text</string>
+    <string name="info1_names">Names</string>
+    <string name="info1_birthday">Enter text</string>
+    <string name="info1_chose_hint">Please choose</string>
+    <string name="info1_sex">Sex</string>
+    <string name="info1_Email">Email</string>
+    <string name="info1_submit">Submit</string>
+
+    <string name="info2_title">Emergency contact</string>
+    <string name="info2_contact1">First reference Profile</string>
+    <string name="info2_contact2">Second reference Profile</string>
+    <string name="info2_relationship">Relationship</string>
+    <string name="info2_telephone">Telephone</string>
+    <string name="info2_Number">Name</string>
+
+    <string name="info_loan1_loan_title">Information about receiving the loan</string>
+    <string name="info_loan1_loan">Method of receiving the loan</string>
+    <string name="info_loan1_accout">Account type</string>
+    <string name="info_loan1_bank_name">Name of the bank</string>
+    <string name="info_loan1_bank_acoount">Bank account</string>
+    <string name="info_loan1_confirm_account">Confirm Bank Account</string>
+
+    <string name="info_loan2_loan_title">Information about receiving the loan</string>
+    <string name="info_loan2_1">Method of receiving the loan</string>
+    <string name="info_loan2_2">Electronic Wallet Account</string>
+    <string name="info_loan2_3">Confirm e-Wallet Account</string>
+
+    <string name="home_title">Green Credit</string>
+    <string name="home_max">Maximum amount ($)</string>
+    <string name="home_times">Maximum loan term</string>
+    <string name="home_days">days</string>
+    <string name="home_cuotas">dues</string>
+    <string name="home_text">Payment in </string>
+    <string name="home_text2"> 3-6 installments</string>
+    <string name="home_text3">is allowed. The term will be longer and more flexible.</string>
+    <string name="home_apply">Apply now</string>
+    <string name="home_pru1">Click to request</string>
+    <string name="home_pru2">Submit the application</string>
+    <string name="home_pru3">Get the loan</string>
+
+    <string name="home_review">Under Review</string>
+    <string name="home_review_text">We are estimating your loan, Pay attention to the review results in the application.</string>
+    <string name="home_loans_bt">They are depositing</string>
+    <string name="home_loans_amount">Loan amount ($)</string>
+    <string name="home_loans_days">Application date</string>
+    <string name="home_loans">Your application has been approved. Your loan is being deposited.</string>
+
+    <string name="chose_aomoutn_bottom_text">Tasa de aprobación 99% si da clic para solicitar dentro de</string>
+
+
+    <string name="my_adjustment">adjustment</string>
+    <string name="my_customer_service">customer service</string>
+    <string name="my_privacy_notices">privacy notices</string>
+    <string name="my_online_customer_service">online customer service</string>
+
+    <string name="go_out">go out</string>
+    <string name="set_luange">Change language</string>
+
+
+    <string name="home_menu1">Home</string>
+    <string name="home_menu2">Order</string>
+    <string name="home_menu3">Profile</string>
+
+
+
+
+</resources>

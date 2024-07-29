@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/bg_activity"
+        tools:context=".ui.MenuActivity">
+
+        <ImageView
+            android:id="@+id/title_homeFm"
+            app:layout_constraintTop_toTopOf="parent"
+            android:src="@drawable/welcome"
+            android:scaleType="centerCrop"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+        </ImageView>
+
+        <com.like.upper.pleasure.view.ViewTitle
+            android:id="@+id/view_homeFm_header"
+            app:layout_constraintTop_toTopOf="parent"
+            app:text_title_view="@string/home_title"
+            app:left_title_image="@drawable/ic_back"
+            app:right_title_image="@drawable/kefufill"
+            app:showLeft="false"
+            android:layout_width="match_parent"
+            android:layout_height="56dp">
+        </com.like.upper.pleasure.view.ViewTitle>
+
+        <View
+            app:layout_constraintTop_toTopOf="@+id/ly_homeFm_top"
+            app:layout_constraintBottom_toBottomOf="@+id/ly_homeFm_top"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layerType="software"
+            android:background="@drawable/shape_line_home"/>
+
+
+        <LinearLayout
+            android:id="@+id/ly_homeFm_top"
+            android:layout_marginTop="16dp"
+            app:layout_constraintTop_toBottomOf="@+id/view_homeFm_header"
+            android:orientation="horizontal"
+            android:padding="20dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_weight="1"
+                android:layout_marginRight="24dp"
+                android:gravity="center_horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+                <TextView
+                    android:id="@+id/tv_homeFm_max"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text=""
+                    android:textStyle="bold"
+                    android:textColor="#ffffffff"
+                    android:textSize="30sp"
+                    />
+
+                <TextView
+                    android:id="@+id/tv_home_max_text"
+                    android:layout_marginTop="8dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:text="@string/home_max"
+                    android:textColor="#ffffffff"
+                    />
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_weight="1"
+                android:layout_marginLeft="24dp"
+                android:gravity="center_horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+                <TextView
+                    android:id="@+id/tv_homeFm_times"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text=""
+                    android:textStyle="bold"
+                    android:textColor="#ffffffff"
+                    android:textSize="30sp"
+                    />
+
+                <TextView
+                    android:id="@+id/tv_homeFm_times_text"
+                    android:layout_marginTop="8dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:text="@string/home_times"
+                    android:textColor="#ffffffff"
+                    />
+            </LinearLayout>
+        </LinearLayout>
+
+
+
+        <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+            android:id="@+id/sr_homeFm"
+            app:layout_constraintTop_toBottomOf="@+id/title_homeFm"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:layout_width="match_parent"
+            android:paddingBottom="64dp"
+            android:layout_height="0dp">
+            <androidx.core.widget.NestedScrollView
+                android:scrollbars="none"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:paddingBottom="64dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+                    <FrameLayout
+                        android:id="@+id/fl_homeFm"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                    </FrameLayout>
+                </LinearLayout>
+
+            </androidx.core.widget.NestedScrollView>
+
+        </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+        <TextView
+            android:id="@+id/tv_homeFm_toast"
+            app:layout_constraintTop_toBottomOf="@+id/ly_homeFm_top"
+            android:layout_marginTop="16dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:paddingLeft="16dp"
+            android:paddingRight="16dp"
+            android:paddingTop="20dp"
+            android:paddingBottom="20dp"
+            android:visibility="gone"
+            android:text="@string/home_text"
+            android:textColor="@color/black"
+            android:background="@drawable/shape_white_radios8"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+        </TextView>
+
+        <TextView
+            android:id="@+id/tv_homeFm_status"
+            android:visibility="gone"
+            android:background="@drawable/shape_white_radios16"
+            app:layout_constraintTop_toBottomOf="@+id/view_homeFm_header"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            android:layout_marginLeft="80dp"
+            android:layout_marginRight="80dp"
+            android:gravity="center"
+            android:text="Bajo Revisión"
+            android:textColor="@color/purple_200"
+            android:layout_width="0dp"
+            android:layout_height="32dp">
+
+        </TextView>
+
+
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+
+
+</layout>

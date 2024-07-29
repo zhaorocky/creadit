@@ -1,0 +1,335 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/bg_activity"
+        tools:context=".ui.LoginActivity">
+
+        <com.like.upper.pleasure.view.ViewTitle
+            android:id="@+id/view_login_header"
+            android:background="@color/purple_200"
+            app:layout_constraintTop_toTopOf="parent"
+            app:text_title_view="@string/info1_title"
+            app:left_title_image="@drawable/ic_back"
+            app:right_title_image="@drawable/kefufill"
+            android:layout_width="match_parent"
+            android:layout_height="56dp">
+        </com.like.upper.pleasure.view.ViewTitle>
+
+        <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+            android:id="@+id/srl"
+            android:layout_marginTop="56dp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <androidx.core.widget.NestedScrollView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                    <LinearLayout
+                        android:orientation="vertical"
+                        android:gravity="center"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:paddingTop="12dp"
+                            android:paddingBottom="12dp"
+                            android:layout_marginTop="12dp"
+                            android:layout_marginBottom="12dp"
+                            android:gravity="center"
+                            android:textStyle="bold"
+                            android:text="@string/info1_title"
+                            android:textColor="@color/text_333"
+                            android:textSize="18sp"
+                            />
+
+                        <LinearLayout
+                            android:orientation="vertical"
+                            android:layout_marginLeft="16dp"
+                            android:layout_marginRight="16dp"
+                            android:paddingBottom="8dp"
+                            android:paddingTop="12dp"
+                            android:background="@drawable/shape_white_radios8"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+                            <TextView
+                                android:layout_marginLeft="16dp"
+                                android:layout_marginRight="16dp"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/info1_last_name"
+                                android:textColor="#ff0e85ff"
+                                android:textSize="14sp"
+                                />
+
+                            <EditText
+                                android:id="@+id/et_infoActivity_name1"
+                                android:background="@color/white"
+                                android:paddingLeft="16dp"
+                                android:paddingRight="16dp"
+                                android:paddingTop="12dp"
+                                android:paddingBottom="8dp"
+                                android:textSize="12sp"
+                                android:singleLine="true"
+                                android:maxLines="1"
+                                android:textColor="@color/text_333"
+                                android:textColorHint="@color/text_999"
+                                android:hint="@string/info1_input_hint"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content">
+
+                            </EditText>
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:orientation="vertical"
+                            android:layout_marginLeft="16dp"
+                            android:layout_marginRight="16dp"
+                            android:layout_marginTop="16dp"
+                            android:paddingBottom="8dp"
+                            android:paddingTop="12dp"
+                            android:background="@drawable/shape_white_radios8"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+                            <TextView
+                                android:layout_marginLeft="16dp"
+                                android:layout_marginRight="16dp"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/info1_names"
+                                android:textColor="#ff0e85ff"
+                                android:textSize="14sp"
+                                />
+
+                            <EditText
+                                android:id="@+id/et_infoActivity_name2"
+                                android:background="@color/white"
+                                android:paddingLeft="16dp"
+                                android:paddingRight="16dp"
+                                android:paddingTop="12dp"
+                                android:paddingBottom="8dp"
+                                android:textSize="12sp"
+                                android:singleLine="true"
+                                android:maxLines="1"
+                                android:inputType="text"
+                                android:textColor="@color/text_333"
+                                android:textColorHint="@color/text_999"
+                                android:hint="@string/info1_input_hint"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content">
+
+                            </EditText>
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:orientation="vertical"
+                            android:layout_marginLeft="16dp"
+                            android:layout_marginRight="16dp"
+                            android:layout_marginTop="16dp"
+                            android:paddingBottom="8dp"
+                            android:paddingTop="12dp"
+                            android:background="@drawable/shape_white_radios8"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+                            <TextView
+                                android:layout_marginLeft="16dp"
+                                android:layout_marginRight="16dp"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/info1_birthday"
+                                android:textColor="#ff0e85ff"
+                                android:textSize="14sp"
+                                />
+
+                            <LinearLayout
+                                android:id="@+id/ly_infoActivity_date"
+                                android:orientation="horizontal"
+                                android:gravity="center"
+                                android:paddingRight="16dp"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content">
+                                <TextView
+                                    android:id="@+id/et_infoActivity_date"
+                                    android:background="@color/white"
+                                    android:paddingLeft="16dp"
+                                    android:paddingRight="16dp"
+                                    android:paddingTop="12dp"
+                                    android:paddingBottom="8dp"
+                                    android:textSize="12sp"
+                                    android:singleLine="true"
+                                    android:maxLines="1"
+                                    android:textColor="@color/text_333"
+                                    android:textColorHint="@color/text_999"
+                                    android:hint="@string/info1_chose_hint"
+                                    android:layout_weight="1"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content">
+                                </TextView>
+
+                                <ImageView
+                                    android:src="@drawable/rili_3"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"/>
+                            </LinearLayout>
+
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:orientation="vertical"
+                            android:layout_marginLeft="16dp"
+                            android:layout_marginRight="16dp"
+                            android:layout_marginTop="16dp"
+                            android:paddingBottom="8dp"
+                            android:paddingTop="12dp"
+                            android:background="@drawable/shape_white_radios8"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+                            <TextView
+                                android:layout_marginLeft="16dp"
+                                android:layout_marginRight="16dp"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/info1_sex"
+                                android:textColor="#ff0e85ff"
+                                android:textSize="14sp"
+                                />
+
+                            <LinearLayout
+                                android:id="@+id/ly_infoActivity_gender"
+                                android:orientation="horizontal"
+                                android:gravity="center"
+                                android:paddingRight="16dp"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content">
+
+                                <TextView
+                                    android:id="@+id/tv_infoActivity_gender"
+                                    android:background="@color/white"
+                                    android:paddingLeft="16dp"
+                                    android:paddingRight="16dp"
+                                    android:paddingTop="12dp"
+                                    android:paddingBottom="8dp"
+                                    android:textSize="12sp"
+                                    android:maxLength="9"
+                                    android:textColor="@color/text_333"
+                                    android:textColorHint="@color/text_999"
+                                    android:hint="@string/info1_chose_hint"
+                                    android:layout_weight="1"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content">
+                                </TextView>
+
+                                <ImageView
+                                    android:src="@drawable/xiala_4"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"/>
+                            </LinearLayout>
+
+
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:orientation="vertical"
+                            android:layout_marginLeft="16dp"
+                            android:layout_marginRight="16dp"
+                            android:layout_marginTop="16dp"
+                            android:paddingBottom="8dp"
+                            android:paddingTop="12dp"
+                            android:background="@drawable/shape_white_radios8"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+                            <TextView
+                                android:layout_marginLeft="16dp"
+                                android:layout_marginRight="16dp"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/info1_Email"
+                                android:textColor="#ff0e85ff"
+                                android:textSize="14sp"
+                                />
+
+                            <EditText
+                                android:id="@+id/et_infoActivity_email"
+                                android:background="@color/white"
+                                android:paddingLeft="16dp"
+                                android:paddingRight="16dp"
+                                android:paddingTop="12dp"
+                                android:paddingBottom="8dp"
+                                android:textSize="12sp"
+                                android:singleLine="true"
+                                android:maxLines="1"
+                                android:textColor="@color/text_333"
+                                android:textColorHint="@color/text_999"
+                                android:hint="@string/info1_input_hint"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content">
+
+                            </EditText>
+
+                        </LinearLayout>
+
+
+
+                    </LinearLayout>
+
+
+                    <LinearLayout
+                        android:orientation="horizontal"
+                        android:padding="20dp"
+                        android:gravity="center"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+                        <include layout="@layout/privacy_text"/>
+                    </LinearLayout>
+
+
+                    <TextView
+                        android:id="@+id/tv_login_submit"
+                        android:layout_marginLeft="64dp"
+                        android:layout_marginRight="64dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:paddingTop="12dp"
+                        android:paddingBottom="12dp"
+                        android:gravity="center"
+                        android:textSize="18sp"
+                        android:clickable="false"
+                        android:text="@string/login_register"
+                        android:background="@drawable/bt_register"
+                        android:textColor="@color/white"
+                        />
+                </LinearLayout>
+
+            </androidx.core.widget.NestedScrollView>
+
+        </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+
+
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
