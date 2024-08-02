@@ -19,6 +19,7 @@ import com.like.upper.pleasure.entity.TypeChoseData
 import com.like.upper.pleasure.ui.ChoseDataActivity
 import com.like.upper.pleasure.ui.LoanChoseAmountActivity
 import com.like.upper.pleasure.ui.vm.InfoLoanViewModel
+import com.like.upper.pleasure.view.NetWorkDialog
 
 class InfoLoan1Activity : BaseVmFragment<InfoLoanViewModel,ActivityInfoLoan1Binding>() {
 
@@ -83,7 +84,7 @@ class InfoLoan1Activity : BaseVmFragment<InfoLoanViewModel,ActivityInfoLoan1Bind
                     setUserData(data)
                 }
             },{
-                showErrorMessage(it.error)
+                errorAction(it.errCode,it.error)
             })
         }
 
@@ -91,7 +92,7 @@ class InfoLoan1Activity : BaseVmFragment<InfoLoanViewModel,ActivityInfoLoan1Bind
             parseState(it,{data ->
                 startAct()
             },{
-                showErrorMessage(it.error)
+                errorAction(it.errCode,it.error)
             })
         }
     }
@@ -140,6 +141,10 @@ class InfoLoan1Activity : BaseVmFragment<InfoLoanViewModel,ActivityInfoLoan1Bind
 
 
         }
+    }
+
+    override fun showNetTimeOutDialog() {
+        NetWorkDialog.showNetTimeOutDialog(requireContext())
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {

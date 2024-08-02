@@ -13,11 +13,15 @@ import com.like.upper.pleasure.databinding.ActivityChoseDataBinding
 import com.like.upper.pleasure.entity.DictionaryInfo
 import com.like.upper.pleasure.entity.TypeChoseData
 import com.like.upper.pleasure.ui.vm.ChoseDataViewModel
+import com.like.upper.pleasure.view.NetWorkDialog
 import com.like.upper.pleasure.view.onclick.OnItemDataClick
 
 
 class ChoseDataActivity : BaseVmActivity<ChoseDataViewModel,ActivityChoseDataBinding>() {
-    
+    override fun showNetTimeOutDialog() {
+        NetWorkDialog.showNetTimeOutDialog(this)
+    }
+
     override fun layoutId() = R.layout.activity_chose_data
 
     private var listData = mutableListOf<DictionaryInfo>()
@@ -66,8 +70,8 @@ class ChoseDataActivity : BaseVmActivity<ChoseDataViewModel,ActivityChoseDataBin
                     mBinding.rvSpinner.adapter = genderAdapter
                 }
             },{
-                showErrorMessage(it.error)
-                finish()
+                errorAction(it.errCode,it.error)
+
             })
         }
 

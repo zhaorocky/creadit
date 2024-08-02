@@ -6,8 +6,12 @@ import com.ecuador.mvvm.base.ui.BaseVmActivity
 import com.like.upper.pleasure.R
 import com.like.upper.pleasure.databinding.ActivityInfoBinding
 import com.like.upper.pleasure.fm.vm.InfoViewModel
+import com.like.upper.pleasure.view.NetWorkDialog
 
 class InfoBaseActivity : BaseVmActivity<InfoViewModel,ActivityInfoBinding>() {
+    override fun showNetTimeOutDialog() {
+        NetWorkDialog.showNetTimeOutDialog(this)
+    }
 
     override fun layoutId() = R.layout.activity_info_base
 

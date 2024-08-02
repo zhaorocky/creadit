@@ -2,6 +2,8 @@ package com.like.upper.pleasure
 
 import android.app.Application
 import android.content.Context
+import android.graphics.Color
+import com.kongzue.dialogx.DialogX
 
 class App : Application() {
 
@@ -20,7 +22,7 @@ class App : Application() {
     override fun onCreate() {
         super.onCreate()
         instance = this
-
+        DialogX.init(this)
     }
 
 }

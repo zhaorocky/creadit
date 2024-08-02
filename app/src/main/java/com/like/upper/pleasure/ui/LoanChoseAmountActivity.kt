@@ -29,6 +29,7 @@ import com.like.upper.pleasure.ui.vm.ChoseAmountViewModel
 import com.like.upper.pleasure.util.NubmerUtils
 import com.like.upper.pleasure.util.setOnSingleClickListener
 import com.like.upper.pleasure.view.LoanDialogFragment
+import com.like.upper.pleasure.view.NetWorkDialog
 import java.math.BigDecimal
 
 class LoanChoseAmountActivity : BaseVmActivity<ChoseAmountViewModel,ActivityLoanAmountBinding>() {
@@ -94,7 +95,7 @@ class LoanChoseAmountActivity : BaseVmActivity<ChoseAmountViewModel,ActivityLoan
             parseState(it,{
                 setProductData(it);
             },{
-                showErrorMessage(it.error)
+                errorAction(it.errCode,it.error)
             })
         }
 
@@ -104,7 +105,7 @@ class LoanChoseAmountActivity : BaseVmActivity<ChoseAmountViewModel,ActivityLoan
                 setLoanData(it)
                 setBtStatus()
             },{
-                showErrorMessage(it.error)
+                errorAction(it.errCode,it.error)
             })
         }
 
@@ -112,7 +113,7 @@ class LoanChoseAmountActivity : BaseVmActivity<ChoseAmountViewModel,ActivityLoan
             parseState(it,{
                 showDialog(it)
             },{
-                showErrorMessage(it.error)
+                errorAction(it.errCode,it.error)
             })
         }
 
@@ -155,6 +156,10 @@ class LoanChoseAmountActivity : BaseVmActivity<ChoseAmountViewModel,ActivityLoan
                 mBinding.tvChoseAmountBottomText.setText(spannableString)
             }
         }.start()
+    }
+
+    override fun showNetTimeOutDialog() {
+        NetWorkDialog.showNetTimeOutDialog(this)
     }
 
     override fun onResume() {

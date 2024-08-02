@@ -15,6 +15,7 @@ import com.like.upper.pleasure.entity.LoginResult
 import com.like.upper.pleasure.ui.vm.LoginViewModel
 import com.ecuador.mvvm.base.util.SharedPreferencesHelper
 import com.like.upper.pleasure.util.setOnSingleClickListener
+import com.like.upper.pleasure.view.NetWorkDialog
 
 class LoginActivity : BaseVmActivity<LoginViewModel,ActivityLoginBinding>() {
 
@@ -64,7 +65,8 @@ class LoginActivity : BaseVmActivity<LoginViewModel,ActivityLoginBinding>() {
                 mBinding.etLoginCode.setText(data?.digestBedroomStraitDusk)
                 showDialog(data?.smsTemplate)
             },{
-                showErrorMessage(it.error)
+
+                errorAction(it.errCode,it.error)
             })
         }
 
@@ -72,7 +74,7 @@ class LoginActivity : BaseVmActivity<LoginViewModel,ActivityLoginBinding>() {
             parseState(it,{data ->
                 setUserInfo(data)
             },{
-                showErrorMessage(it.error)
+                errorAction(it.errCode,it.error)
             })
         }
     }
@@ -116,6 +118,10 @@ class LoginActivity : BaseVmActivity<LoginViewModel,ActivityLoginBinding>() {
 
     fun stopCountdown() {
         countDownTimer?.cancel()
+    }
+
+    override fun showNetTimeOutDialog() {
+        NetWorkDialog.showNetTimeOutDialog(this)
     }
 
     override fun onDestroy() {

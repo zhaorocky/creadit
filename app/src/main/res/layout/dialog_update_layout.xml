@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingBottom="10dp"
+    android:orientation="vertical">
+
+
+<androidx.constraintlayout.widget.ConstraintLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginHorizontal="15dp"
+    android:background="@color/white"
+    android:paddingBottom="31dp">
+
+    <ImageView
+        android:id="@+id/iv_warning"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:src="@mipmap/icon_warning"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tv1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="16dp"
+        android:layout_marginTop="33dp"
+        android:gravity="center"
+        android:paddingHorizontal="16dp"
+        android:paddingBottom="16dp"
+        android:text="@string/update_tips"
+        android:textColor="@color/text_333"
+        android:textSize="15sp"
+        app:layout_constraintTop_toBottomOf="@+id/iv_warning" />
+
+
+    <TextView
+        android:id="@+id/tv_quite"
+        android:layout_width="0dp"
+        android:layout_height="46dp"
+        android:layout_marginStart="23dp"
+        android:background="@drawable/bg_update_cancel"
+        android:gravity="center"
+        android:text="Va ahora"
+        android:textColor="@color/text_333"
+        android:textSize="17sp"
+        app:layout_constraintEnd_toStartOf="@+id/tv_agree"
+        app:layout_constraintHorizontal_weight="1"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv1" />
+
+    <TextView
+        android:id="@+id/tv_agree"
+        android:layout_width="0dp"
+        android:layout_height="46dp"
+        android:layout_marginEnd="23dp"
+        android:layout_marginStart="10dp"
+        android:background="@drawable/bg_update_btn"
+        android:gravity="center"
+        android:text="Va ahora"
+        android:textColor="@color/white"
+        android:textSize="17sp"
+        app:layout_constraintEnd_toStartOf="@+id/v_position"
+        app:layout_constraintHorizontal_weight="1"
+        app:layout_constraintStart_toEndOf="@+id/tv_quite"
+        app:layout_constraintTop_toBottomOf="@+id/tv1"
+        app:layout_goneMarginEnd="48dp"
+        app:layout_goneMarginStart="48dp" />
+    <View
+        android:id="@+id/v_position"
+        android:layout_width="0dp"
+        android:layout_height="46dp"
+        android:visibility="visible"
+        android:background="@color/black"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/tv_agree"
+        app:layout_constraintTop_toBottomOf="@+id/tv1"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+    <ImageView
+        android:id="@+id/iv_close"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_gravity="center"
+        android:src="@drawable/close"/>
+</LinearLayout>

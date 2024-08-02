@@ -81,9 +81,13 @@ dependencies {
     implementation ("androidx.swiperefreshlayout:swiperefreshlayout:1.1.0")
     implementation ("androidx.core:core-splashscreen:1.2.0-alpha01")
 
+    implementation ("io.github.lucksiege:pictureselector:v3.11.2")
+    implementation ("io.github.lucksiege:compress:v3.11.2")
+
     implementation ("com.github.bumptech.glide:glide:4.13.0")
     annotationProcessor ("com.github.bumptech.glide:compiler:4.13.0")
-
-
+    implementation ("com.kongzue.dialogx:DialogX:0.0.49")
+    implementation ("pub.devrel:easypermissions:3.0.0")
+    implementation ("io.github.cymchad:BaseRecyclerViewAdapterHelper4:4.1.4")
     implementation(project(":mvvm"))
 }

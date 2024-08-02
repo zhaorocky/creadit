@@ -1,6 +1,7 @@
 package com.like.upper.pleasure.fm
 
 import android.app.Activity
+import android.content.Context
 import android.content.Intent
 import android.graphics.Bitmap
 import android.graphics.BitmapFactory
@@ -8,6 +9,7 @@ import android.graphics.ImageDecoder
 import android.net.Uri
 import android.os.Bundle
 import android.provider.MediaStore
+import android.util.Log
 import android.view.View
 import androidx.activity.OnBackPressedCallback
 import androidx.activity.result.contract.ActivityResultContracts
@@ -22,16 +24,32 @@ import com.like.upper.pleasure.databinding.ActivityImageBinding
 import com.like.upper.pleasure.entity.BaseUserInfo
 import com.like.upper.pleasure.entity.ImageInfo
 import com.like.upper.pleasure.fm.vm.InfoImageModel
+import com.like.upper.pleasure.util.GlideEngine
+import com.like.upper.pleasure.view.NetWorkDialog
+import com.luck.picture.lib.basic.PictureSelector
+import com.luck.picture.lib.config.SelectMimeType
+import com.luck.picture.lib.engine.CompressFileEngine
+import com.luck.picture.lib.entity.LocalMedia
+import com.luck.picture.lib.interfaces.OnKeyValueResultCallbackListener
+import com.luck.picture.lib.interfaces.OnResultCallbackListener
 import kotlinx.coroutines.launch
+import pub.devrel.easypermissions.AppSettingsDialog
+import pub.devrel.easypermissions.EasyPermissions
+import top.zibin.luban.Luban
+import top.zibin.luban.OnNewCompressListener
 import java.io.ByteArrayOutputStream
 import java.io.File
 import java.io.FileOutputStream
 
-class InfoImageActivity : BaseVmFragment<InfoImageModel,ActivityImageBinding>() {
+
+class InfoImageActivity : BaseVmFragment<InfoImageModel, ActivityImageBinding>(),
+    EasyPermissions.PermissionCallbacks {
 
     override fun layoutId() = R.layout.activity_image
 
-    private val PICK_IMAGE = 100
+    companion object {
+        const val PE_PICK_IMAGE = 100
+    }
 
     var imgUrl1 = ""
     var imgUrl2 = ""
@@ -41,54 +59,56 @@ class InfoImageActivity : BaseVmFragment<InfoImageModel,ActivityImageBinding>() 
         srl = mBinding.srl
 
 
-        mViewModel.baseUserInfoResult.observeData(this){
-            parseState(it,{data ->
+        //身份证
+        mViewModel.baseUserInfoResult.observeData(this) {
+            parseState(it, { data ->
                 setBaseData(data)
                 mViewModel.getBaseImgInfo()
-            },{
-                showErrorMessage(it.error)
+            }, {
+                errorAction(it.errCode, it.error)
             })
         }
 
         mBinding.srl.setOnRefreshListener {
             mViewModel.getBaseInfo()
+
         }
 
         mBinding.etInfoImgCard.addTextChangedListener {
             checkData(false)
         }
 
-        mViewModel.baseImgInfoResult.observeData(this){
-            parseState(it,{data ->
+        //请求数据接口返回的图片
+        mViewModel.baseImgInfoResult.observeData(this) { it ->
+            parseState(it, { data ->
                 setImageData(data)
                 checkData(false)
-            },{
-                showErrorMessage(it.error)
+            }, {
+                errorAction(it.errCode, it.error)
             })
         }
         mBinding.viewInfoImgHeader.getLifrImage().setOnClickListener {
 
         }
 
-        mBinding.viewUpload1.lyDef.setOnClickListener {
-            choseType =1
-            chosePic(1)
+        mBinding.viewUpload1.getIvView().setOnClickListener {
+            choseType = 1
+            chosePic()
+        }
+        mBinding.viewUpload1.getBasicLayout().setOnClickListener {
+            choseType = 1
+            chosePic()
         }
 
-        mBinding.viewUpload1.iv.setOnClickListener {
-            choseType =1
-            chosePic(1)
-        }
-
-        mBinding.viewUpload2.lyDef.setOnClickListener {
+        mBinding.viewUpload2.getBasicLayout().setOnClickListener {
             choseType = 2
-            chosePic(2)
+            chosePic()
+        }
+        mBinding.viewUpload2.getIvView().setOnClickListener {
+            choseType = 2
+            chosePic()
         }
 
-        mBinding.viewUpload2.iv.setOnClickListener {
-            choseType = 2
-            chosePic(2)
-        }
 
         mBinding.tvSubmit.setOnClickListener {
             mViewModel.saveCard(card)
@@ -96,119 +116,168 @@ class InfoImageActivity : BaseVmFragment<InfoImageModel,ActivityImageBinding>() 
 
         mViewModel.uploadResult.observeData(this) {
             parseState(it, {
-                if(choseType == 1){
+                Log.d("上传","成功===")
+                if (choseType == 1) {
                     imgUrl1 = "success"
-                    mBinding.viewUpload1.setUploadSuccess()
-                }else if(choseType == 2){
+                    mBinding.viewUpload1.setUploadSuccess(it)
+                } else if (choseType == 2) {
                     imgUrl2 = "success"
-                    mBinding.viewUpload2.setUploadSuccess()
+                    mBinding.viewUpload2.setUploadSuccess(it)
                 }
                 checkData(false)
-            },{ ex->
-                showErrorMessage(ex.error)
+            }, { ex ->
+                errorAction(ex.errCode, ex.error)
             })
         }
 
-        mViewModel.loginResult.observeData(this){
-            parseState(it,{
-                findNavController().navigate(R.id.infoBank)
-            },{ ex->
-                showErrorMessage(ex.error)
+        mViewModel.loginResult.observeData(this) {
+            parseState(it, {
+                startAct()
+            }, { ex ->
+                errorAction(ex.errCode, ex.error)
             })
         }
         mViewModel.getBaseInfo()
 
     }
 
+    /**
+     * 身份证处理 如果接口有值的话 就不让编辑了
+     */
     private fun setBaseData(data: BaseUserInfo?) {
         data?.let {
-            mBinding.etInfoImgCard.setText(it.youngPresentationDifficultFailureNeitherPhotograph)
-            if(it.youngPresentationDifficultFailureNeitherPhotograph.isNullOrBlank()){
+            if (it.youngPresentationDifficultFailureNeitherPhotograph.isNullOrBlank()) {
                 card = ""
-            }else{
+                mBinding.etInfoImgCard.isEnabled = true
+            } else {
+                mBinding.etInfoImgCard.setText(it.youngPresentationDifficultFailureNeitherPhotograph)
+                //有值的话就不要编辑了
+                mBinding.etInfoImgCard.isEnabled = false
                 card = it.youngPresentationDifficultFailureNeitherPhotograph
             }
         }
     }
 
+    override fun showNetTimeOutDialog() {
+        NetWorkDialog.showNetTimeOutDialog(requireContext())
+    }
+
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        requireActivity().onBackPressedDispatcher.addCallback(viewLifecycleOwner, object : OnBackPressedCallback(true) {
-            override fun handleOnBackPressed() {
-                findNavController().navigate(R.id.infoContract)
-            }
-        })
+        requireActivity().onBackPressedDispatcher.addCallback(
+            viewLifecycleOwner,
+            object : OnBackPressedCallback(true) {
+                override fun handleOnBackPressed() {
+                    findNavController().navigate(R.id.infoContract)
+                }
+            })
     }
 
-    private fun checkData(show : Boolean) : Boolean{
+    //显示按钮逻辑
+    private fun checkData(show: Boolean) {
         mBinding.tvSubmit.isEnabled = false
         mBinding.tvSubmit.setBackgroundResource(R.drawable.bt_register)
 
         card = mBinding.etInfoImgCard.text.toString()
 
-        if(card.isBlank()){
-            if(show){
+        if (card.isBlank()) {
+            if (show) {
                 showErrorMessage(getString(R.string.info1_input_hint))
             }
-            return false
+            return
         }
 
-        if(imgUrl1.isBlank()){
-            if(show){
-                showErrorMessage(getString(R.string.info1_input_hint)+" "+getString(R.string.info1_last_name))
+        if (imgUrl1.isBlank()) {
+            if (show) {
+                showErrorMessage(getString(R.string.info1_input_hint) + " " + getString(R.string.info1_last_name))
             }
-            return false
+            return
         }
 
-        if(imgUrl2.isBlank()){
-            if(show){
-                showErrorMessage(getString(R.string.info1_input_hint)+" "+getString(R.string.info1_last_name))
+        if (imgUrl2.isBlank()) {
+            if (show) {
+                showErrorMessage(getString(R.string.info1_input_hint) + " " + getString(R.string.info1_last_name))
             }
-            return false
+            return
         }
 
         mBinding.tvSubmit.isEnabled = true
         mBinding.tvSubmit.setBackgroundResource(R.drawable.bt_register_can)
-        return true
     }
 
     private fun setImageData(data: ImageInfo?) {
         data?.let {
-            if(!it.sadSeniorDinnerGrandma.isNullOrBlank()){
+            if (!it.sadSeniorDinnerGrandma.isNullOrBlank()) {
+                //如果是接口过来的 说明之前已经设置好了 就不让后点击了
+                mBinding.viewUpload1.getBasicLayout().isEnabled = false
+                mBinding.viewUpload1.getIvView().isEnabled = false
                 mBinding.viewUpload1.setUploadSuccess(it.sadSeniorDinnerGrandma)
                 imgUrl1 = it.sadSeniorDinnerGrandma
-            }else{
+            } else {
                 imgUrl1 = ""
             }
 
-            if(!it.challengingStraitFinalSchoolbag.isNullOrBlank()){
+            if (!it.challengingStraitFinalSchoolbag.isNullOrBlank()) {
+                mBinding.viewUpload2.getBasicLayout().isEnabled = false
+                mBinding.viewUpload2.getIvView().isEnabled = false
                 mBinding.viewUpload2.setUploadSuccess(it.challengingStraitFinalSchoolbag)
                 imgUrl2 = it.challengingStraitFinalSchoolbag
-            }else{
+            } else {
                 imgUrl2 = ""
             }
         }
         checkData(false)
     }
 
-    private fun startAct(){
+    private fun startAct() {
         findNavController().navigate(R.id.infoBank)
     }
 
-
-    val permission =  arrayOf(
+    val permissions = arrayOf(
         android.Manifest.permission.READ_EXTERNAL_STORAGE,
-        android.Manifest.permission.WRITE_EXTERNAL_STORAGE
+        android.Manifest.permission.WRITE_EXTERNAL_STORAGE,
+        android.Manifest.permission.CAMERA
     )
-    private fun chosePic(index : Int){
-        if (requireContext().checkSelfPermission(android.Manifest.permission.WRITE_EXTERNAL_STORAGE)
-            != android.content.pm.PackageManager.PERMISSION_GRANTED) {
-            requestPermissions( permission, PICK_IMAGE)
-            openGallery(index)
+
+    /**
+     * 选择图片 i、
+     * index 1:上面的图片  2：下面的图片
+     */
+
+    private fun chosePic() {
+        if (EasyPermissions.hasPermissions(requireContext(), *permissions)) {
+            pickImg()
         } else {
-            openGallery(index)
+            // Do not have permissions, request them now
+            EasyPermissions.requestPermissions(
+                this@InfoImageActivity,
+                "Para poder ofrecerle un buen servicio, vaya a la configuración de su teléfono móvil para activar los permisos correspondientes",
+                PE_PICK_IMAGE,
+                *permissions
+            );
         }
+
+    }
+
+    private fun pickImg() {
+        PictureSelector.create(this)
+            .openGallery(SelectMimeType.ofImage())
+            .setImageEngine(GlideEngine.createGlideEngine())
+            .setMaxSelectNum(1)
+            .forResult(object : OnResultCallbackListener<LocalMedia?> {
+                override fun onResult(result: ArrayList<LocalMedia?>) {
+                   Log.d("result===","${result[0]?.path}")
+                    val path=result.getOrNull(0)?.path
+                    if (path?.isNotEmpty()==true){
+                        uploadPic(path, index = choseType)
+                    }
+
+                }
+
+                override fun onCancel() {
+                }
+            })
     }
 
     override fun onRequestPermissionsResult(
@@ -217,47 +286,36 @@ class InfoImageActivity : BaseVmFragment<InfoImageModel,ActivityImageBinding>() 
         grantResults: IntArray
     ) {
         super.onRequestPermissionsResult(requestCode, permissions, grantResults)
-
+        EasyPermissions.onRequestPermissionsResult(requestCode, permissions, grantResults, this);
     }
 
-    private fun openGallery(index : Int) {
-        try {
-            val gallery = Intent(Intent.ACTION_PICK, MediaStore.Images.Media.INTERNAL_CONTENT_URI)
-            if(index == 1){
-                pickImageLauncher1.launch(gallery)
-            }else if(index == 2){
-                pickImageLauncher2.launch(gallery)
-            }
-
-        }catch (e : Exception){
-            e.printStackTrace()
-        }
-
+    /**
+     * 授权成功
+     */
+    override fun onPermissionsGranted(requestCode: Int, perms: MutableList<String>) {
+        pickImg()
     }
 
-    private val pickImageLauncher1 = registerForActivityResult(ActivityResultContracts.StartActivityForResult()) { result ->
-        if (result.resultCode == Activity.RESULT_OK) {
-            result.data?.data?.let { uri ->
-                getChosePic(uri,1)
-            }
+    /**
+     * 授权拒绝
+     */
+    override fun onPermissionsDenied(requestCode: Int, perms: MutableList<String>) {
+        /**
+        　　* 若是在权限弹窗中，用户勾选了'NEVER ASK AGAIN.'或者'不在提示'，且拒绝权限。
+        　　* 这时候，需要跳转到设置界面去，让用户手动开启。
+        　　*/
+
+        if (EasyPermissions.somePermissionDenied(this, *perms.toTypedArray())) {
+            AppSettingsDialog.Builder(this).build().show()
         }
     }
-
-    private val pickImageLauncher2 = registerForActivityResult(ActivityResultContracts.StartActivityForResult()) { result ->
-        if (result.resultCode == Activity.RESULT_OK) {
-            result.data?.data?.let { uri ->
-                getChosePic(uri,2)
-            }
-        }
-    }
-
-    fun compressImageToFile(uri: Uri, maxSize: Int): File? {
+    private fun compressImageToFile(path: String, maxSize: Int): File? {
         var bitmap : Bitmap? = null
         if (android.os.Build.VERSION.SDK_INT >= 29) {
-            val source = ImageDecoder.createSource(requireContext().contentResolver, uri)
+            val source = ImageDecoder.createSource(requireContext().contentResolver, Uri.parse(path))
             bitmap = ImageDecoder.decodeBitmap(source)
         } else {
-            bitmap = MediaStore.Images.Media.getBitmap(requireContext().contentResolver, uri)
+            bitmap = MediaStore.Images.Media.getBitmap(requireContext().contentResolver, Uri.parse(path))
         }
         if(bitmap==null){
             return null
@@ -280,22 +338,17 @@ class InfoImageActivity : BaseVmFragment<InfoImageModel,ActivityImageBinding>() 
         return file
     }
 
-    private fun getChosePic(uri : Uri,index : Int){
-        if(index == 1){
-            mBinding.viewUpload1.setUploading()
-        }else if(index == 2){
-            mBinding.viewUpload2.setUploading()
-        }
-
+    private fun uploadPic(path: String, index: Int) {
         mViewModel.viewModelScope.launch {
             runCatching {
-                compressImageToFile(uri,1024*100)
+                mBinding.viewUpload1.setUploading()
+                compressImageToFile(path,1024*100)
             }.onSuccess {
                 if(index == 1){
-                    mBinding.viewUpload1.setUpBit(BitmapFactory.decodeFile(it?.path))
+                    mBinding.viewUpload1.setUploadSuccess(it?.path)
                     mViewModel.uploadImg(it,"00")
                 }else if(index == 2){
-                    mBinding.viewUpload2.setUpBit(BitmapFactory.decodeFile(it?.path))
+                    mBinding.viewUpload2.setUploadSuccess(it?.path)
                     mViewModel.uploadImg(it,"01")
                 }
 
@@ -304,5 +357,6 @@ class InfoImageActivity : BaseVmFragment<InfoImageModel,ActivityImageBinding>() 
             }
         }
     }
+
 
 }

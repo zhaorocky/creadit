@@ -1,5 +1,6 @@
 package com.ecuador.mvvm.base.net
 
+import android.net.ConnectivityManager
 import androidx.lifecycle.LifecycleOwner
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
@@ -142,5 +143,7 @@ fun <T> BaseVmFragment<*, *>.parseState(
         }
     }
 }
+
+
 
 

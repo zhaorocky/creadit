@@ -1,10 +1,12 @@
 package com.ecuador.mvvm.base.base
 
+import android.net.http.NetworkException
 import androidx.lifecycle.MutableLiveData
 import com.ecuador.mvvm.base.util.AppException
 import com.google.gson.JsonParseException
 import retrofit2.HttpException
 import java.net.ConnectException
+import java.net.UnknownHostException
 
 sealed class ResultState<out T> {
 
@@ -41,19 +43,26 @@ fun <T> MutableLiveData<ResultState<T?>>.paresResult(result: BaseResult<T?>?) {
 
 fun <T> MutableLiveData<ResultState<T>>.paresException(e: Throwable) {
     var messge: String? = "Network Error"
+    var code=-1
     when(e){
         is JsonParseException ->{
             messge = "Parse Error"
         }
         is HttpException ->{
             messge = "Connect Error"
+//            code=3000
         }
         is ConnectException ->{
             messge = "Connect Error"
+            code=3000
+        }
+        is UnknownHostException ->{
+            messge = "Connect Error"
+            code=3000
         }else ->{
             messge = "Network Error"
         }
     }
 
-    this.value = ResultState.onAppError(AppException(-1 , messge))
+    this.value = ResultState.onAppError(AppException(code , messge))
 }

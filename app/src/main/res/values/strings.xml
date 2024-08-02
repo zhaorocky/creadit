@@ -106,7 +106,6 @@ The NBFC loan process and guidelines mandates us to verify references. This feat
     <string name="chose_aomoutn_bottom_text">Tasa de aprobación 99% si da clic para solicitar dentro de</string>
 
 
-
     <string name="go_out">Salir</string>
     <string name="set_luange">Cambiar idioma</string>
 
@@ -115,7 +114,8 @@ The NBFC loan process and guidelines mandates us to verify references. This feat
     <string name="home_menu2">Orden</string>
     <string name="home_menu3">Perfil</string>
 
-
+    <string name="update_tips">Crédito Verde le recuerda que se necesita actualizar la última versión</string>
+    <string name="net_timeout">Hacer clic en el botón "Abrir" para saltara la página de la configuración del internet</string>
 
 
 </resources>

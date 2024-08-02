@@ -14,6 +14,7 @@ import com.like.upper.pleasure.R
 import com.like.upper.pleasure.databinding.FragmentHomeBinding
 import com.like.upper.pleasure.fm.vm.HomeViewModel
 import com.like.upper.pleasure.util.NubmerUtils
+import com.like.upper.pleasure.view.NetWorkDialog
 
 
 class HomeFragment : BaseVmFragment<HomeViewModel, FragmentHomeBinding>() {
@@ -58,6 +59,8 @@ class HomeFragment : BaseVmFragment<HomeViewModel, FragmentHomeBinding>() {
                     }
                 }
 
+            }, onError = {
+                errorAction(it.errCode,it.error)
             })
         }
 
@@ -77,6 +80,10 @@ class HomeFragment : BaseVmFragment<HomeViewModel, FragmentHomeBinding>() {
         }
 
 
+    }
+
+    override fun showNetTimeOutDialog() {
+        NetWorkDialog.showNetTimeOutDialog(requireContext())
     }
 
     override fun showLoading() {

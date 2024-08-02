@@ -11,6 +11,7 @@ import com.like.upper.pleasure.entity.ImageInfo
 import com.like.upper.pleasure.entity.LoginResult
 import com.like.upper.pleasure.entity.ProductInfo
 import com.like.upper.pleasure.entity.TryLoanResultInfo
+import com.like.upper.pleasure.entity.UpdateInfo
 import okhttp3.MultipartBody
 import okhttp3.RequestBody
 import retrofit2.http.*
@@ -93,5 +94,7 @@ interface ApiService {
                           @Part("spiritualSurroundingLeaf") type: RequestBody,
                           ) : BaseResult<String?>
 
-
+    @POST("/pot/lightBriefMadam")
+    @FormUrlEncoded
+    suspend fun getUpdateInfo(@FieldMap data: HashMap<String, String>) : BaseResult<UpdateInfo?>
 }

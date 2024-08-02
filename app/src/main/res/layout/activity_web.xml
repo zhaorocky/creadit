@@ -12,26 +12,40 @@
         android:layout_height="match_parent"
         android:background="@color/bg_activity"
         tools:context=".ui.WebActivity">
+
         <com.like.upper.pleasure.view.ViewTitle
             android:id="@+id/view_webAct_header"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
             android:background="@color/purple_200"
             app:layout_constraintTop_toTopOf="parent"
             app:left_title_image="@drawable/ic_back"
-            app:right_title_image="@drawable/kefufill"
+            app:right_title_image="@drawable/kefufill"/>
+
+        <ProgressBar
+            android:id="@+id/progressBar"
+            style="?android:attr/progressBarStyleHorizontal"
             android:layout_width="match_parent"
-            android:layout_height="56dp">
-        </com.like.upper.pleasure.view.ViewTitle>
+            android:layout_height="23dp"
+            android:layout_marginTop="100dp"
+            android:layout_marginHorizontal="40dp"
+            app:layout_constraintTop_toBottomOf="@+id/view_webAct_header"
+            android:progressDrawable="@drawable/progress_bg"
+            android:visibility="visible" />
 
         <WebView
             android:id="@+id/web"
-            app:layout_constraintTop_toBottomOf="@+id/view_webAct_header"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintBottom_toBottomOf="parent"
-            android:layout_width="0dp"
-            android:layout_height="0dp">
-        </WebView>
+            app:layout_constraintTop_toBottomOf="@+id/view_webAct_header"/>
 
+        <include android:id="@+id/layout_error"
+            layout="@layout/view_web_error_layout"
+            android:visibility="gone"/>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

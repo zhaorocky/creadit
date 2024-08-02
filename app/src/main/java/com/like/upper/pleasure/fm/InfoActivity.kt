@@ -18,6 +18,7 @@ import com.like.upper.pleasure.entity.TypeChoseData
 import com.like.upper.pleasure.ui.ChoseDataActivity
 import com.like.upper.pleasure.ui.ChoseDateActivity
 import com.like.upper.pleasure.fm.vm.InfoViewModel
+import com.like.upper.pleasure.view.NetWorkDialog
 
 class InfoActivity : BaseVmFragment<InfoViewModel,ActivityInfoBinding>() {
 
@@ -63,7 +64,7 @@ class InfoActivity : BaseVmFragment<InfoViewModel,ActivityInfoBinding>() {
             parseState(it, {
                 startAct()
             },{
-                showErrorMessage(it.error)
+                errorAction(it.errCode,it.error)
             })
         }
 
@@ -81,7 +82,7 @@ class InfoActivity : BaseVmFragment<InfoViewModel,ActivityInfoBinding>() {
             parseState(it,{data ->
                 setUserData(data)
             },{
-                showErrorMessage(it.error)
+                errorAction(it.errCode,it.error)
             })
         }
     }
@@ -144,6 +145,10 @@ class InfoActivity : BaseVmFragment<InfoViewModel,ActivityInfoBinding>() {
 
     private fun startAct(){
         findNavController().navigate(R.id.infoContract)
+    }
+
+    override fun showNetTimeOutDialog() {
+        NetWorkDialog.showNetTimeOutDialog(requireContext())
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {

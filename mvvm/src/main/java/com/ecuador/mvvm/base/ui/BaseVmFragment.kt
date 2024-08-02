@@ -18,7 +18,16 @@ abstract class BaseVmFragment<VM : BaseViewModel, VB : ViewDataBinding> : BaseFr
         return (obj.javaClass.genericSuperclass as ParameterizedType).actualTypeArguments[0] as VM
     }
 
-    fun showErrorMessage(message: String){
-        Toast.makeText(requireContext(),message, Toast.LENGTH_LONG).show()
+    fun showErrorMessage(message: String?){
+        Toast.makeText(requireContext(),message.orEmpty(), Toast.LENGTH_SHORT).show()
     }
+
+    fun errorAction(code:Int,message: String?){
+        if (code==3000){
+            showNetTimeOutDialog()
+        }else{
+            showErrorMessage(message)
+        }
+    }
+    abstract fun showNetTimeOutDialog()
 }

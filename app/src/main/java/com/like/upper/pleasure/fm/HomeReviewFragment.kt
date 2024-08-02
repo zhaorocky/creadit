@@ -12,6 +12,7 @@ import com.like.upper.pleasure.ui.InfoBaseActivity
 import com.like.upper.pleasure.ui.LoanChoseAmountActivity
 import com.like.upper.pleasure.ui.LoginActivity
 import com.like.upper.pleasure.util.setOnSingleClickListener
+import com.like.upper.pleasure.view.NetWorkDialog
 
 
 class HomeReviewFragment : BaseVmFragment<HomeViewModel, FragmentHomeReviewBinding>() {
@@ -21,6 +22,10 @@ class HomeReviewFragment : BaseVmFragment<HomeViewModel, FragmentHomeReviewBindi
     override fun initView() {
 
 
+    }
+
+    override fun showNetTimeOutDialog() {
+        NetWorkDialog.showNetTimeOutDialog(requireContext())
     }
 
     override fun showLoading() {

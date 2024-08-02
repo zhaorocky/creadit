@@ -14,6 +14,7 @@ import com.like.upper.pleasure.ui.LuangeActivity
 import com.ecuador.mvvm.base.util.SharedPreferencesHelper
 import com.like.upper.pleasure.entity.BaseUserInfo
 import com.like.upper.pleasure.ui.MenuActivity
+import com.like.upper.pleasure.view.NetWorkDialog
 
 
 class MineFragment : BaseVmFragment<MineViewModel, FragmentMyBinding>() {
@@ -31,6 +32,8 @@ class MineFragment : BaseVmFragment<MineViewModel, FragmentMyBinding>() {
         mViewModel.homeResult.observeData(this) {
             parseState(it, { productInfo ->
 
+            },{
+                errorAction(it.errCode,it.error)
             })
         }
 
@@ -38,6 +41,8 @@ class MineFragment : BaseVmFragment<MineViewModel, FragmentMyBinding>() {
         mViewModel.baseUserInfoResult.observeData(this){
             parseState(it,{data ->
                 setUserData(data)
+            },{
+                errorAction(it.errCode,it.error)
             })
         }
     }
@@ -56,6 +61,10 @@ class MineFragment : BaseVmFragment<MineViewModel, FragmentMyBinding>() {
 
     }
     lateinit var  sharedPreferencesHelper : SharedPreferencesHelper
+    override fun showNetTimeOutDialog() {
+        NetWorkDialog.showNetTimeOutDialog(requireContext())
+    }
+
     override fun onStart() {
         super.onStart()
         mBinding.tvFmMyPhone.text = sharedPreferencesHelper.phoneNo

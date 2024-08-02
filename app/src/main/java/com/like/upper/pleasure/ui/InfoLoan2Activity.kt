@@ -7,8 +7,12 @@ import com.like.upper.pleasure.R
 import com.like.upper.pleasure.databinding.ActivityInfoLoan2Binding
 import com.like.upper.pleasure.fm.InfoImageActivity
 import com.like.upper.pleasure.fm.vm.InfoViewModel
+import com.like.upper.pleasure.view.NetWorkDialog
 
 class InfoLoan2Activity : BaseVmActivity<InfoViewModel,ActivityInfoLoan2Binding>() {
+    override fun showNetTimeOutDialog() {
+        NetWorkDialog.showNetTimeOutDialog(this)
+    }
 
     override fun layoutId() = R.layout.activity_info_loan2
 
